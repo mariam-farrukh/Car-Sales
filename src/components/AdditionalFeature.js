@@ -1,6 +1,5 @@
 import React from 'react';
-import {BUY_ITEM, REMOVE_FEATURE, remove, buy} from './store';
-import {connect} from 'react-redux'
+
 
 const AdditionalFeature = props => {
   return (
@@ -12,13 +11,4 @@ const AdditionalFeature = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    store: state.store
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  { BUY_ITEM, REMOVE_FEATURE, remove, buy }
-)(AdditionalFeature);
+export default AdditionalFeature;
