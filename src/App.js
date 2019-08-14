@@ -15,7 +15,7 @@ const App = props => {
     props.remove(item);
   };
 
-  const buyItem = item => {
+  const buyFeature = item => {
     console.log('buy', item);
     props.buy(item);
   };
@@ -27,7 +27,7 @@ const App = props => {
         <AddedFeatures car={props.car} removeFeature={removeFeature}/>
       </div>
       <div className="box">
-        <AdditionalFeatures store={props.store} buyItem={buyItem}/>
+        <AdditionalFeatures store={props.store} buyFeature={buyFeature}/>
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
