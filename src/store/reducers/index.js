@@ -1,4 +1,4 @@
-import React from 'react';
+import { BUY_ITEM, REMOVE_FEATURE } from "../actions/index";
 
 const initialState = {
     additionalPrice: 0,
@@ -16,3 +16,30 @@ const initialState = {
       { id: 4, name: 'Rear spoiler', price: 250 }
     ]
 };
+
+export const reducer = (state = initialState, action) => {
+    switch(action.type) {
+        case BUY_ITEM:
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice + action.payload.price,
+                car: {
+                    ...state.car,
+                    features: [...state.car.features, action.payload]
+                }
+            };
+        case REMOVE_FEATURE:
+            return{
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter( feature => 
+                        feature.id !== action.payload.id
+                    )
+                }
+            };
+        default:
+            return state;
+    }
+}

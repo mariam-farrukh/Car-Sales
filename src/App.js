@@ -23,12 +23,12 @@ const App = props => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} removeFeature={removeFeature}/>
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} removeFeature={removeFeature}/>
       </div>
       <div className="box">
-        <AdditionalFeatures store={state.store} buyItem={buyItem}/>
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <AdditionalFeatures store={props.store} buyItem={buyItem}/>
+        <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
   );
