@@ -4,7 +4,7 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-import {BUY_ITEM, REMOVE_FEATURE, remove, buy} from './store';
+import {BUY_ITEM, REMOVE_FEATURE, remove, buy} from './store/actions';
 import {connect} from 'react-redux'
 
 
