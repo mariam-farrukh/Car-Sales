@@ -1,4 +1,4 @@
-import { BUY_ITEM, REMOVE_FEATURE } from "../actions/index";
+import { BUY_FEATURE, REMOVE_FEATURE } from "../actions/index";
 
 const initialState = {
     additionalPrice: 0,
@@ -19,7 +19,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case BUY_ITEM:
+        case BUY_FEATURE:
             return {
                 ...state,
                 additionalPrice: state.additionalPrice + action.payload.price,
