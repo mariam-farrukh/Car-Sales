@@ -1,5 +1,5 @@
 import React from 'react';
-import {BUY_FEATURE, buyFeature} from './store/actions';
+import {BUY_FEATURE, buyFeature} from '../store/actions';
 import {connect} from 'react-redux'
 
 const AdditionalFeature = props => {
