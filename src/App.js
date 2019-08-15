@@ -4,31 +4,21 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-import {BUY_ITEM, REMOVE_FEATURE, remove, buy} from './store/actions';
+import {BUY_ITEM, REMOVE_FEATURE, removeFeature, buyFeature} from './store/actions';
 import {connect} from 'react-redux'
 
 
-const App = props => {
-
-  const removeFeature = item => {
-    console.log('remove', item);
-    props.remove(item);
-  };
-
-  const buyFeature = item => {
-    console.log('buy', item);
-    props.buy(item);
-  };
+const App = () => {
 
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} removeFeature={removeFeature}/>
+        <Header/>
+        <AddedFeatures car={state.car} removeFeature={removeFeature}/>
       </div>
       <div className="box">
-        <AdditionalFeatures store={props.store} buyFeature={buyFeature}/>
-        <Total car={props.car} additionalPrice={props.additionalPrice} />
+        <AdditionalFeatures store={state.store} buyFeature={buyFeature}/>
+        <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>
   );
@@ -44,5 +34,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { BUY_ITEM, REMOVE_FEATURE, remove, buy }
+  { BUY_ITEM, REMOVE_FEATURE, removeFeature, buyFeature }
 )(App);
